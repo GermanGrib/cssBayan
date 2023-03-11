@@ -44,6 +44,8 @@ h1 {
   font-weight: 800;
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  border-bottom: 0.1rem solid gray;
+  padding-bottom: 1rem;
 }
 
 .list-reset {
@@ -76,6 +78,10 @@ h1 {
   overflow: hidden;
 }
 
+.accordion, .accordion__label {
+  cursor: pointer;
+}
+
 .accordion__item {
   margin-bottom: 2rem;
 }
@@ -92,9 +98,10 @@ h1 {
   background-size: cover;
 }
 
-.accordion__label {
-  display: flex;
-  justify-content: space-between;
+.accordion__img {
+  width: 100%;
+  height: 25rem;
+  width: 100%;
 }
 
 .content {
@@ -102,12 +109,7 @@ h1 {
   max-height: 0;
   overflow: hidden;
   transition: max-height .3s ease-in-out;
-}
-
-.accordion__img {
-  width: 100%;
-  height: 25rem;
-  width: 100%;
+  padding-top: 2rem;
 }
 
 .accordion__input:checked+.content {
@@ -116,12 +118,31 @@ h1 {
 }
 
 .accordion__plus {
+  opacity: 0;
   transform: rotate(0);
   transition: transform .3s ease-in-out;
 }
 
-.accordion__input:checked+.accordion__plus {
-  transform: rotate(45deg);
+.accordion:hover .accordion__plus {
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+}
+
+.accordion__label {
+  display: flex;
+  justify-content: space-between;
+  color: blue;
+  border-bottom: 0.1rem solid gray;
+  padding-bottom: 1rem;
+}
+
+.accordion__input:checked+.accordion__label {
+  color: black;
+}
+
+.accordion__item:hover+.content {
+  overflow: visible;
+  max-height: 25rem;
 }
 
 @media (min-width: 568px) {
@@ -148,7 +169,7 @@ h1 {
   body {
     font-size: 3rem;
   }
-  
+
   h1 {
     font-size: 3.6rem;
   }
