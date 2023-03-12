@@ -82,6 +82,7 @@ h1 {
   width: 1.5em;
   height: 1.5em;
   background-size: cover;
+  opacity: 1;
 }
 
 .accordion__title {
@@ -182,10 +183,9 @@ h1 {
     opacity: 0;
   }
 
-  .accordion__label {
-    cursor: pointer;
-  }
+}
 
+@media (hover:hover) {
   .accordion__item:hover>.accordion__label .content {
     overflow: visible;
     max-height: 100%;
@@ -205,4 +205,7 @@ h1 {
     opacity: 1;
   }
 
+  .accordion__label {
+    cursor: pointer;
+  }
 }
