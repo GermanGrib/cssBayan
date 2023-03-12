@@ -78,13 +78,8 @@ h1 {
   overflow: hidden;
 }
 
-.accordion,
-.accordion__label {
-  cursor: pointer;
-}
-
 .accordion__item {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   border-bottom: 0.1rem solid gray;
   padding-bottom: 1rem;
 }
@@ -99,7 +94,6 @@ h1 {
   width: 2.5rem;
   height: 2.5rem;
   background-size: cover;
-  transition: transform .3s ease-in-out;
 }
 
 .accordion__title {
@@ -116,20 +110,7 @@ h1 {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  padding-top: 2rem;
-  transition: opacity .3s ease-in-out, .3s ease-in-out;
-}
-
-.accordion__input:checked+.accordion__label .content,
-.accordion__item:hover>.accordion__label .content {
-  overflow: visible;
-  max-height: 100%;
-  opacity: 1;
-}
-
-.accordion__input:checked+.accordion__label .accordion__plus,
-.accordion__item:hover>.accordion__label .accordion__plus {
-  transform: rotate(45deg);
+  transition: all .4s ease-in-out;
 }
 
 .accordion__text {
@@ -140,18 +121,11 @@ h1 {
   color: black;
 }
 
-.accordion:hover .accordion__text {
-  color: black;
-}
 
 .accordion__plus {
-  opacity: 0;
   transition: opacity .3s ease-in-out;
 }
 
-.accordion:hover .accordion__plus {
-  opacity: 1;
-}
 
 .accordion__input:active+.accordion__label .accordion__text {
   color: blue;
@@ -163,6 +137,17 @@ h1 {
 
 .accordion__input:active+.accordion__label {
   opacity: 0.5;
+}
+
+.accordion__input:checked+.accordion__label .content {
+  overflow: visible;
+  max-height: 100%;
+  opacity: 1;
+}
+
+.accordion__input:checked+.accordion__label .accordion__plus {
+  transform: rotate(45deg);
+  transition: all .3s ease-in-out;
 }
 
 
@@ -183,7 +168,7 @@ h1 {
   .accordion__img {
     width: 60%;
     height: 35vh;
-  } 
+  }
 
 }
 
@@ -201,9 +186,36 @@ h1 {
     padding: 0 40rem;
   }
 
+  .accordion__plus {
+    opacity: 0;
+  }
+
+  .accordion__label {
+    cursor: pointer;
+  }
+
   .accordion__img {
     width: 43%;
     height: 43vh;
-  } 
+  }
+
+  .accordion__item:hover>.accordion__label .content {
+    overflow: visible;
+    max-height: 100%;
+    opacity: 1;
+  }
+
+  .accordion__item:hover>.accordion__label .accordion__plus {
+    transform: rotate(45deg);
+    transition: all .3s ease-in-out;
+  }
+
+  .accordion:hover .accordion__text {
+    color: black;
+  }
+
+  .accordion:hover .accordion__plus {
+    opacity: 1;
+  }
 
 }
