@@ -1,5 +1,3 @@
-/* First FontFamily @... */
-
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -21,7 +19,6 @@ svg {
   max-width: 100%;
 }
 
-/* HERE CHANGE CHARACTERISTICS FOR OWN PROJECT*/
 body {
   display: flex;
   overflow: auto;
@@ -30,7 +27,6 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  /* font-size: 1em; */
   font-weight: 600;
   line-height: 1.3;
   font-family: "Muller", sans-serif;
@@ -67,10 +63,13 @@ h1 {
 }
 
 .accordion__item {
-  margin-bottom: 1.2em;
   border-bottom: 0.1em solid gray;
-  padding-bottom: 0.6em;
 }
+
+.accordion__item:not(:first-child) {
+  margin-top: 0.7em;
+}
+
 
 .accordion__input {
   display: none;
@@ -91,19 +90,14 @@ h1 {
 }
 
 .accordion__img {
-  max-height: 0;
-  transition: all .3s ease-in-out;
+  height: 100%;
 }
-
-.accordion__input:checked+.accordion__label .accordion__img {
-  max-height: 40vh;
-}
-
 
 .content {
+  position: relative;
   text-align: center;
   padding: 0 5%;
-  max-height: 0;
+  height: 0;
   overflow: hidden;
   opacity: 0;
   transition: all .4s ease-in-out;
@@ -112,6 +106,11 @@ h1 {
 .accordion__text {
   color: blue;
   transition: all .3s ease-in-out;
+}
+
+.accordion__label {
+  display: block;
+  padding-bottom: 0.7em;
 }
 
 .accordion__input:checked+.accordion__label .accordion__text {
@@ -138,7 +137,7 @@ h1 {
 
 .accordion__input:checked+.accordion__label .content {
   overflow: visible;
-  max-height: 100%;
+  height: 20rem;
   opacity: 1;
 }
 
@@ -165,7 +164,6 @@ h1 {
   .content {
     padding: 0 15%;
   }
-
 }
 
 @media (min-width:1180px) {
@@ -193,19 +191,14 @@ h1 {
 }
 
 @media (hover:hover) {
-  .accordion__item:hover>.accordion__label .content{
+  .accordion__item:hover>.accordion__label .content {
     overflow: visible;
-    max-height: 100%;
+    height: 20rem;
     opacity: 1;
-  }
-
-  .accordion__item:hover>.accordion__label .accordion__img {
-    max-height: 40vh;
   }
 
   .accordion__item:hover>.accordion__label .accordion__plus {
     transform: rotate(45deg);
-    /* transition: all .3s ease-in-out; */
   }
 
   .accordion:hover .accordion__text {
